@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
+
+*{
+    font-family: 'poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(220.55deg, #FFE6A4 0%, #AD8211 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* display: flex; */
+}
+
+img{
+    height: 100%;
+    width: 100%;
+}
+
+.headerTitle h1{
+    width: 100%;
+    text-align: center;
+}
+
+.gameContainer{
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    position: relative;
+    z-index: 30;
+}
+
+.table{
+    display: grid;
+    grid-template-columns: repeat(3,min(100px));
+    grid-template-rows: repeat(3,min(100px));
+}
+
+.cell{
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell:nth-child(1){
+    border-bottom: 4px solid #fff;
+    border-right: 4px solid #fff;
+}
+
+.cell:nth-child(3){
+    border-bottom: 4px solid #fff;
+    border-left: 4px solid #fff;
+}
+
+.cell:nth-child(5){
+    outline: 4px solid #fff;
+}
+
+.cell:nth-child(7){
+    border-top: 4px solid #fff;
+    border-right: 4px solid #fff;
+}
+
+.cell:nth-child(9){
+    border-top: 4px solid #fff;
+    border-left: 4px solid #fff;
+}
+
+svg{
+    transform: scale(1);
+    animation: show .2s ease-in-out;
+}
+
+@keyframes show{
+    0%{
+        height: 55px;
+    }
+    100%{
+        height: 73px;
+    }
+}
+
+.gameBtn{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 30;
+}
+
+.btnPlay{
+    background-color: #3B9AE1;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btnPlay:hover{
+    background-color: #277BC0;
+}
+
+.btnPlay:active{
+    background-color: #293462;
+}
+
+.overlayWinner{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;    
+    /* opacity: 0; */
+    z-index: -1;
+}
+
+.show::before{
+    content: "";
+    display: flex;
+    position: absolute;
+    background: #000;
+    opacity: .325;
+}
+
+.show::after{
+    height: 200%;
+    width: 200%;
+}
+
+.show{
+    z-index: 50;
+    opacity: 1;
+}
+
+
+.winner{
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 40;
+    bottom: 0;
+    margin: auto;
+    object-fit: cover;
+    height: 300px;
+    width: 300px;
+}
+
+.winner h2{
+    font-size: 2rem;
+    text-align: center;
+    /* margin: 2rem 0; */
+}

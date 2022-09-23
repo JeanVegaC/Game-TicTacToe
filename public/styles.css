@@ -2,13 +2,17 @@
 
 *{
     font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body{
     background: linear-gradient(220.55deg, #FFE6A4 0%, #AD8211 100%);
     background-repeat: no-repeat;
     background-size: cover;
-    /* display: flex; */
+    position: relative;
+    /* padding: 1rem 0; */
 }
 
 img{
@@ -24,9 +28,9 @@ img{
 .gameContainer{
     display: flex;
     justify-content: center;
-    margin: 1rem 0;
+    margin: 4rem 0;
     position: relative;
-    z-index: 30;
+    /* z-index: 10; */
 }
 
 .table{
@@ -85,6 +89,7 @@ svg{
     justify-content: center;
     position: relative;
     z-index: 30;
+    padding: 0 0 1rem 0;
 }
 
 .btnPlay{
@@ -104,15 +109,6 @@ svg{
     background-color: #293462;
 }
 
-.overlayWinner{
-    display: flex;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;    
-    /* opacity: 0; */
-    z-index: -1;
-}
 
 .show::before{
     content: "";
@@ -128,26 +124,40 @@ svg{
 }
 
 .show{
-    z-index: 50;
-    opacity: 1;
+    opacity: 1 !important;
+    z-index: 30 !important;
 }
-
 
 .winner{
     position: absolute;
-    top: 0;
+    transition: .4s;
     display: flex;
     flex-direction: column;
-    z-index: 40;
-    bottom: 0;
-    margin: auto;
-    object-fit: cover;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: -1;
+}
+
+.overlayWinner{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: .325;
+}
+
+.winner img{
     height: 300px;
     width: 300px;
+    z-index: 30;
 }
 
 .winner h2{
     font-size: 2rem;
     text-align: center;
-    /* margin: 2rem 0; */
+    color: #ddd;
+    z-index: 30;
 }

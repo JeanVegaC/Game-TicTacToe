@@ -61,9 +61,13 @@ const verify = (i,e)=>{
 }
 
 const showWinner = (e)=>{
-    const overlayWinner = d.querySelector('.overlayWinner').classList.add('show');
-    if(e == 'x') return console.log('The X is the winner!!');
-    if(e == 'o') return console.log('The O is the winner!!');
+    const overlayWinner = d.querySelector('.winner').classList.add('show'),
+    winner = d.getElementById('winner');
+    let color;
+    (e == 'x')?color = '#607EAA':color = '#D61C4E';
+    
+    winner.innerHTML = `The <b style="color:${color};">${e}</b> is the winner!!`;
+    
 }
 
 let play = ()=>{
@@ -84,7 +88,20 @@ btnPlay.addEventListener('click',()=>{
     play();
     btnPlay.innerHTML = 'Restart';
     play = ()=>{
-        location.reload();
+        const overlayWinner = d.querySelector('.winner').classList.remove('show'),
+        winner = d.getElementById('winner'),
+        cells = d.querySelectorAll('.cell');    
+        winner.innerHTML = ``;
+
+        cells.forEach( e =>{
+            while(e.firstChild){
+                e.removeChild(e.firstChild);
+            }
+        })
+
+        turn = 0;
 
     }
 });
+
+

@@ -13,7 +13,7 @@
     <div class="winner">
         <div class="overlayWinner"></div>
         <img src="/public/assets/youWin.jpg" alt="">
-        <h2 id="winner">The winner is X !!</h2>
+        <h2 id="winner"></h2>
     </div>
     </div>
     <header>
@@ -23,6 +23,21 @@
     </header>
     <main>
         <section id="game-container">
+            <div class="gameHeader">
+                <div class="marker">
+                    <div class="marker-x">
+                        <svg class="figure" value="x" version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 130 130"><line x1="10" y1="10" x2="120" y2="120" stroke-width="10" stroke="#607EAA" stroke-linecap="round"/><line x1="10" y1="120" x2="120" y2="10" stroke-width="10" stroke="#607EAA" stroke-linecap="round"/></svg>
+                        <span>0</span>
+                    </div>
+                    <div class="marker-o">
+                        <svg value="o" height="25" width="25"><circle cx="12" cy="12" r="8.5" stroke="#D61C4E" stroke-width="2.9" fill="transparent"/></svg>
+                        <span>0</span>
+                    </div>
+                </div>
+                <div class="turn" >
+                    <h3>Turno de:</h3><span></span>
+                </div>
+            </div>
             <div class="gameContainer">
                 <div class="table">
                     <div class="cell"></div>
